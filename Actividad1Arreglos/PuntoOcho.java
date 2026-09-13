@@ -23,5 +23,18 @@ public class PuntoOcho {
                 menor = a[i];
             }
         }
+
+        int cMayor  = 0;
+        int cMenor = 0;
+
+        for(int i = 0; i < a.length; i++) {
+            if(a[i] == mayor) {
+                cMayor++;
+            }
+            if(a[i] == menor) {
+                cMenor++;
+            }
+        }
+        
     }
 }
