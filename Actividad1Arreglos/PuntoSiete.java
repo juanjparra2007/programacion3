@@ -27,14 +27,14 @@ public class PuntoSiete {
 
         System.out.println("Pares: ");
         for(int i = 0; i < p; i++){
-            System.out.println(pa[i]);
+            System.out.println("pa["+ i +"] = " + pa[i]);
         }
 
         System.out.println("---------------------------------");
 
         System.out.println("Impares: ");
         for(int i = 0; i < im; i++){
-            System.out.println(imp[i]);
+            System.out.println("imp["+ i +"] = " + imp[i]);
         }
     }
 }
