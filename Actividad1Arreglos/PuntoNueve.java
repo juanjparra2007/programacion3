@@ -25,7 +25,7 @@ public class PuntoNueve {
             }
         }
 
-
+        System.out.println("El número " + numB + " se repite "+ conta + " vecces en el arreglo.");
 
 
 
