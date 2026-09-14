@@ -34,6 +34,22 @@ public class PuntoOnce {
         int[] c = new int[contNeg];
         int[] d = new int[contCeros];
 
+        int posiPos = 0;
+        int posiNeg = 0;
+        int posiCeros = 0;
+
+        for(int i = 0; i < n; i++) {
+            if(a[i] > 0) {
+                b[posiPos] = a[i];
+                posiPos++;
+            } else if(a[i] < 0) {
+                c[posiNeg] = a[i];
+                posiNeg++;
+            } else {
+                d[posiCeros] = a[i];
+                posiCeros++;
+            }
+        }
 
 
 
