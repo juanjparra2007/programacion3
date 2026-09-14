@@ -26,7 +26,20 @@ public class PuntoDoce {
             }
         }
 
+        if(tamaB == 0){
+            System.out.println("El número" +x+ "no se encuentra en el arreglo");
+        } else {
+            int[] b = new int[tamaB];
+            
+            int posB = 0;
 
+            for(int i = 0; i < n; i++) {
+                if(a[i] == x) {
+                    b[posB] = i+ 1;
+                    posB++;
+                }
+            }
+        }
 
 
 
