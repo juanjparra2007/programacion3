@@ -9,10 +9,30 @@ public class PuntoOnce {
 
         int[] a = new int[n];
 
+        int contPos = 0;
+        int contNeg = 0;
+        int contCeros = 0;
+
         System.out.println("Ingrese los "+ n+"elementos del arreglo: ");
         for(int i = 0; i< n; i++) {
             System.out.print("a[" + i+ "]=");
             a[i] = sc.nextInt();
+        }
+
+        for(int i = 0; i <n; i++) {
+            if(a[i] > 0) {
+                contPos++;
+            } else if(a[i] == 0) {
+                contCeros++;
+            } else {
+                contNeg++;
+            }
+
+        }
+
+        
+
+
         }
 
 
