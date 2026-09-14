@@ -16,6 +16,16 @@ public class PuntoDoce {
             a[i] = sc.nextInt();
         }
 
+        System.out.print("Ingrse el valor de X a buscar; ");
+        int x = sc.nextInt();
+
+        int tamaB = 0;
+        for(int i = 0; i < n; i++) {
+            if (a[i] == x) {
+                tamaB++;
+            }
+        }
+
 
 
 
