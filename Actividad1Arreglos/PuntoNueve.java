@@ -15,5 +15,24 @@ public class PuntoNueve {
             a[i] = sc.nextInt();
         }
 
+        System.out.println("Ingrse el número que se desea buscar:");
+        int numB = sc.nextInt();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
