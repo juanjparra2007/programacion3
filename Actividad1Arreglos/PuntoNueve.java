@@ -11,7 +11,7 @@ public class PuntoNueve {
 
         System.out.println("Ingrese los "+ tam + " elementos del arreglo: ");
         for(int i = 0; i < tam; i++) {
-            System.out.println("Elemento [" + i + "]:");
+            System.out.println("a[" + i + "]:");
             a[i] = sc.nextInt();
         }
 
