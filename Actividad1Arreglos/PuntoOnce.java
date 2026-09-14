@@ -8,5 +8,24 @@ public class PuntoOnce {
         int n = sc.nextInt();
 
         int[] a = new int[n];
+
+        System.out.println("Ingrese los "+ n+"elementos del arreglo: ");
+        for(int i = 0; i< n; i++) {
+            System.out.print("a[" + i+ "]=");
+            a[i] = sc.nextInt();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
