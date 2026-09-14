@@ -30,10 +30,12 @@ public class PuntoOnce {
 
         }
 
-        
+        int[] b = new int[contPos];
+        int[] c = new int[contNeg];
+        int[] d = new int[contCeros];
 
 
-        }
+
 
 
 
