@@ -4,22 +4,22 @@ public class PuntoOnce {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Ingrese el tamaño del arreglo:");
+        System.out.print("Ingrese el tamaño del arreglo: ");
         int n = sc.nextInt();
 
         int[] a = new int[n];
+
+        //Rango para los números aleatorios
+        int max = 50;
+        int min = -50;
 
         int contPos = 0;
         int contNeg = 0;
         int contCeros = 0;
 
-        System.out.println("Ingrese los "+ n+"elementos del arreglo: ");
-        for(int i = 0; i< n; i++) {
-            System.out.print("a[" + i+ "]=");
-            a[i] = sc.nextInt();
-        }
+        for(int i = 0; i< a.length; i++) {
+            a[i] = (int) (Math.random() * (max - min + 1) + min);
 
-        for(int i = 0; i <n; i++) {
             if(a[i] > 0) {
                 contPos++;
             } else if(a[i] == 0) {
@@ -27,7 +27,6 @@ public class PuntoOnce {
             } else {
                 contNeg++;
             }
-
         }
 
         int[] b = new int[contPos];
@@ -38,7 +37,7 @@ public class PuntoOnce {
         int posiNeg = 0;
         int posiCeros = 0;
 
-        for(int i = 0; i < n; i++) {
+        for(int i = 0; i < a.length; i++) {
             if(a[i] > 0) {
                 b[posiPos] = a[i];
                 posiPos++;
@@ -52,36 +51,37 @@ public class PuntoOnce {
         }
 
         System.out.println("\n--- ARREGLO ORIGINAL A ---");
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < a.length; i++) {
             System.out.println("a[" + i + "] = " + a[i]);
         }
 
         System.out.println("\n---Arreglo Positivos---");
-        for (int i = 0; i < b.length; i++) {
-            System.out.println("b[" + i + "] = " + b[i]);
+        if(b.length == 0) {
+            System.out.println("No hay números positivos en el arreglo.");
+        } else {
+            for (int i = 0; i < b.length; i++) {
+                System.out.println("b[" + i + "] = " + b[i]);
+            }
         }
 
         System.out.println("\n---Arreglo Negativos---");
-        for (int i = 0; i < c.length; i++) {
-            System.out.println("c[" + i + "] = " + c[i]);
+        if(c.length == 0) {
+            System.out.println("No hay números negativos en el arreglo.");
+        } else {
+            for (int i = 0; i < c.length; i++) {
+                System.out.println("c[" + i + "] = " + c[i]);
+            }
         }
 
         System.out.println("\n---Arreglo Ceros---");
-        for (int i = 0; i < d.length; i++) {
-            System.out.println("d[" + i + "] = " + d[i]);
+        if(d.length == 0) {
+            System.out.println("No hay números ceros en el arreglo.");
+        } else {
+            for (int i = 0; i < d.length; i++) {
+                System.out.println("d[" + i + "] = " + d[i]);
+            }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        sc.close();
     }
 }
