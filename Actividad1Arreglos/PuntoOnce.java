@@ -51,7 +51,25 @@ public class PuntoOnce {
             }
         }
 
+        System.out.println("\n--- ARREGLO ORIGINAL A ---");
+        for (int i = 0; i < n; i++) {
+            System.out.println("a[" + i + "] = " + a[i]);
+        }
 
+        System.out.println("\n---Arreglo Positivos---");
+        for (int i = 0; i < b.length; i++) {
+            System.out.println("b[" + i + "] = " + b[i]);
+        }
+
+        System.out.println("\n---Arreglo Negativos---");
+        for (int i = 0; i < c.length; i++) {
+            System.out.println("c[" + i + "] = " + c[i]);
+        }
+
+        System.out.println("\n---Arreglo Ceros---");
+        for (int i = 0; i < d.length; i++) {
+            System.out.println("d[" + i + "] = " + d[i]);
+        }
 
 
 
