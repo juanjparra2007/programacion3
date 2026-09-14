@@ -18,6 +18,12 @@ public class PuntoNueve {
         System.out.println("Ingrse el número que se desea buscar:");
         int numB = sc.nextInt();
 
+        int conta = 0;
+        for(int i = 0; i < a.length; i++) {
+            if(a[i] == numB) {
+                conta++;
+            }
+        }
 
 
 
