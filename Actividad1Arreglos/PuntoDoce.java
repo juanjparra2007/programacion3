@@ -10,5 +10,18 @@ public class PuntoDoce {
         int[] a = new int[n];
 
 
+        System.out.println("Ingrse los "+ n + " elmentos del arrglo:");
+        for(int i = 0; i < n; i++) {
+            System.out.print("a[" +i+"]= " );
+            a[i] = sc.nextInt();
+        }
+
+
+
+
+
+
+
+
     }
 }
