@@ -22,6 +22,8 @@ public class PuntoTrece {
             suma += a[i];
         }
 
+        double media = (double) suma / a.length;
+
 
 
 
