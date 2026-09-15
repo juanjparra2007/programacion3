@@ -9,5 +9,22 @@ public class PuntoTrece {
 
         int[] a = new int[n];
 
+        int[] b = new int[n];
+        int[] c = new int[n];
+
+
+        int suma = 0;
+        int may = 0;
+        int men = 0,
+
+
+
+
+
+
+
+
+
+
     }
 }
