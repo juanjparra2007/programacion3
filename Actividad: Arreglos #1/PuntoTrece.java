@@ -24,6 +24,16 @@ public class PuntoTrece {
 
         double media = (double) suma / a.length;
 
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] > media) {
+                mayores[ma] = a[i];
+                ma++;
+            } else if (a[i] < media) {
+                menores[me] = a[i];
+                me++;
+            }
+        }
+
 
 
 
