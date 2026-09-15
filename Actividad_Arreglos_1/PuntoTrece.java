@@ -1,11 +1,11 @@
-import java.util.scanner;
+import java.util.Scanner;
 
 public class PuntoTrece {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Ingrese el rtamño del arreglo; ");
-        int n = sc.nexInt();
+        int n = sc.nextInt();
 
         int[] a = new int[n];
 
@@ -15,7 +15,7 @@ public class PuntoTrece {
 
         int suma = 0;
         int may = 0;
-        int men = 0,
+        int men = 0;
 
         for(int i = 0; i < a.length; i++) {
             a[i] = (int) (Math.random() * 100) + 1;
@@ -26,11 +26,11 @@ public class PuntoTrece {
 
         for (int i = 0; i < a.length; i++) {
             if (a[i] > media) {
-                mayores[ma] = a[i];
-                ma++;
+                b[may] = a[i];
+                may++;
             } else if (a[i] < media) {
-                menores[me] = a[i];
-                me++;
+                c[men] = a[i];
+                men++;
             }
         }
 
