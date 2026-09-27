@@ -28,6 +28,11 @@ public class Pelicula {
         return duracionMinutos;
     }
 
+    @Override 
+    public String toString() {
+        return nombre + " (" + idioma + ") - Tipo: " + tipo + " - Duración: " + duracionMinutos + " min";
+    }
+
 
 
 
