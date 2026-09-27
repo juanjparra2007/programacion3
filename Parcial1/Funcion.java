@@ -49,6 +49,23 @@ public class Funcion {
         return libres;
     }
 
+    public boolean sillaOcupada(char fila, int numero) {
+        fila = Character.toUpperCase(fila);
+        int col = numero - 1;
+
+        if (fila >= 'A' && fila <= 'E') {
+            int f = fila - 'A';
+            if (f >= 0 && f < 5 && col >= 0 && col < 12) {
+                return sillasGeneral[f][col];
+            }
+        } else if ((fila == 'F' || fila == 'G') && sillasPreferencial != null) {
+            int f = fila - 'G';
+            if (f >= 0 && f < 2 && col >= 0 && col < 9) {
+                return sillasPreferencial[f][col];
+            }
+        }
+        return false;
+    }
 
 
 
