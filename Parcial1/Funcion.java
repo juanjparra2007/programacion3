@@ -12,9 +12,7 @@ public class Funcion {
         numeroSala = pNumeroSala;
         franjaHoraria = pFranjaHoraria;
 
-
         sillasGeneral = new boolean[5][12];
-
 
         if (numeroSala == 1 || numeroSala == 2) {
             sillasPreferencial = new boolean[2][9];
@@ -23,28 +21,36 @@ public class Funcion {
         }
     }
 
-    public Pelicula getPelicula() { return pelicula; }
-    public int getNumeroSala() { return numeroSala; }
-    public String getFranjaHoraria() { return franjaHoraria; }
+    public Pelicula getPelicula() {
+        return pelicula;
+    }
+
+    public int getNumeroSala() {
+        return numeroSala;
+    }
+
+    public String getFranjaHoraria() {
+        return franjaHoraria;
+    }
 
     public int getSillasDisponibles() {
         int libres = 0;
-        for(int i = 0; i < sillasGeneral.length; i++) {
-            for(int j = 0; j < sillasGeneral[i].length; j++) {
-                if(!sillasGeneral[i][j]) {
+        for (int i = 0; i < sillasGeneral.length; i++) {
+            for (int j = 0; j < sillasGeneral[i].length; j++) {
+                if (!sillasGeneral[i][j]) {
                     libres++;
                 }
             }
         }
 
         if (sillasPreferencial != null) {
-            for(int i = 0; i < sillasPreferencial.length; i++) {
-                for(int j = 0; j < sillasPreferencial[i].length; j++) {
-                    if(!sillasPreferencial[i][j]) {
+            for (int i = 0; i < sillasPreferencial.length; i++) {
+                for (int j = 0; j < sillasPreferencial[i].length; j++) {
+                    if (!sillasPreferencial[i][j]) {
                         libres++;
+                    }
                 }
             }
-        }
         }
         return libres;
     }
@@ -91,44 +97,31 @@ public class Funcion {
         return false;
     }
 
+    public void DibujoDeSala() {
+        System.out.println("\n--- ESQUEMA DE SALA" + numeroSala+"(" + franjaHoraria+") ---");
+        System.out.println("     1  2  3  4  5  6  7  8  9 10 11 12");
 
+        if (sillasPreferencial != null) {
+            char[] prefFilas = { 'G','F' };
+            for (int i = 1; i >= 0; i--) {
+                System.out.print(prefFilas[i] + "    ");
+                for (int j = 0; j < 9; j++) {
+                    System.out.print(sillasPreferencial[i][j] ? " X " : " _ ");
+                }
+                System.out.println();
+            }
+            System.out.println("----------------------------------------");
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        char[] genFilas={'E','D','C','B','A'};
+        for (int i = 0; i < 5; i++) {
+            System.out.print(genFilas[i] + "   ");
+            for (int j = 0; j < 12; j++) {
+                System.out.print(sillasGeneral[4 - i][j] ? " X " : " _ ");
+            }
+            System.out.println();
+        }
+        System.out.println("    [------------- PANTALLA -------------]\n");
+    }
 
 }
