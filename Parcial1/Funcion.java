@@ -98,7 +98,7 @@ public class Funcion {
     }
 
     public void DibujoDeSala() {
-        System.out.println("\n--- ESQUEMA DE SALA" + numeroSala+"(" + franjaHoraria+") ---");
+        System.out.println("\n--- ESQUEMA DE SALA" + numeroSala + " (" + franjaHoraria + ") ---");
         System.out.println("     1  2  3  4  5  6  7  8  9 10 11 12");
 
         if (sillasPreferencial != null) {
@@ -113,7 +113,7 @@ public class Funcion {
             System.out.println("----------------------------------------");
         }
 
-        char[] genFilas={'E','D','C','B','A'};
+        char[] genFilas = {'E', 'D', 'C', 'B', 'A'};
         for (int i = 0; i < 5; i++) {
             System.out.print(genFilas[i] + "   ");
             for (int j = 0; j < 12; j++) {
@@ -123,5 +123,4 @@ public class Funcion {
         }
         System.out.println("    [------------- PANTALLA -------------]\n");
     }
-
 }
