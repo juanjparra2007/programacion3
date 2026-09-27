@@ -21,8 +21,11 @@ public class Funcion {
         } else {
             sillasPreferencial = null;
         }
-
     }
+
+    public Pelicula getPelicula() { return pelicula; }
+    public int getNumeroSala() { return numeroSala; }
+    public String getFranjaHoraria() { return franjaHoraria; }
 
 
 
