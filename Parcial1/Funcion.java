@@ -58,8 +58,8 @@ public class Funcion {
             if (f >= 0 && f < 5 && col >= 0 && col < 12) {
                 return sillasGeneral[f][col];
             }
-        } else if ((fila == 'F' || fila == 'G') && sillasPreferencial != null) {
-            int f = fila - 'G';
+        } else if ((fila == 'F' || fila == 'F') && sillasPreferencial != null) {
+            int f = fila - 'F';
             if (f >= 0 && f < 2 && col >= 0 && col < 9) {
                 return sillasPreferencial[f][col];
             }
@@ -67,6 +67,29 @@ public class Funcion {
         return false;
     }
 
+    public boolean ocupaSilla(char fila, int numero) {
+        fila = Character.toUpperCase(fila);
+        int col = numero - 1;
+
+        if (fila >= 'A' && fila <= 'E') {
+            int f = fila - 'A';
+            if (f >= 0 && f < 6 && col >= 0 && col < 12) {
+                if (!sillasGeneral[f][col]) {
+                    sillasGeneral[f][col] = true;
+                    return true;
+                }
+            }
+        } else if ((fila == 'F' || fila == 'G') && sillasPreferencial != null) {
+            int f = fila - 'F';
+            if (f >= 0 && f < 2 && col >= 0 && col < 9) {
+                if (!sillasPreferencial[f][col]) {
+                    sillasPreferencial[f][col] = true;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
 
 
