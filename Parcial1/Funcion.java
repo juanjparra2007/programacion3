@@ -27,7 +27,27 @@ public class Funcion {
     public int getNumeroSala() { return numeroSala; }
     public String getFranjaHoraria() { return franjaHoraria; }
 
+    public int getSillasDisponibles() {
+        int libres = 0;
+        for(int i = 0; i < sillasGeneral.length; i++) {
+            for(int j = 0; j < sillasGeneral[i].length; j++) {
+                if(!sillasGeneral[i][j]) {
+                    libres++;
+                }
+            }
+        }
 
+        if (sillasPreferencial != null) {
+            for(int i = 0; i < sillasPreferencial.length; i++) {
+                for(int j = 0; j < sillasPreferencial[i].length; j++) {
+                    if(!sillasPreferencial[i][j]) {
+                        libres++;
+                }
+            }
+        }
+        }
+        return libres;
+    }
 
 
 
