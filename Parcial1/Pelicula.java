@@ -32,21 +32,4 @@ public class Pelicula {
     public String toString() {
         return nombre + " (" + idioma + ") - Tipo: " + tipo + " - Duración: " + duracionMinutos + " min";
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
