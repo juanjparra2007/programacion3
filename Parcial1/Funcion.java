@@ -11,6 +11,17 @@ public class Funcion {
         pelicula = pPelicula;
         numeroSala = pNumeroSala;
         franjaHoraria = pFranjaHoraria;
+
+
+        sillasGeneral = new boolean[5][12];
+
+
+        if (numeroSala == 1 || numeroSala == 2) {
+            sillasPreferencial = new boolean[2][9];
+        } else {
+            sillasPreferencial = null;
+        }
+
     }
 
 
