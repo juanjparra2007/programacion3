@@ -12,6 +12,7 @@ public class CinemaStar {
             System.out.println("1. Creacion de peliculas");
             System.out.println("2. Asignacion de funciones");
             System.out.println("3. Ventas de entradas");
+            System.out.println("4. Salir");
             System.out.print("Seleccione una opcion: ");
 
             int opcion = leerEntero(scanner);
@@ -97,7 +98,7 @@ public class CinemaStar {
         System.out.println("\n--- APARTADO DE VENTAS ---");
         sala.listaFunciones();
         
-        System.out.print("Sseleccione el numero de la funcion");
+        System.out.print("Seleccione el número de la función: ");
         int idx = leerEntero(scanner) - 1;
         
         Funcion f = sala.getFuncion(idx);
@@ -110,7 +111,7 @@ public class CinemaStar {
         while (ventaActiva){
             f.DibujoDeSala();
             System.out.println("Sillas disponibles en esta funcion: " + f.getSillasDisponibles());
-            System.out.println("Cuantas sillas desea comprar? (0 para volver al menu): ");
+            System.out.print("Cuantas sillas desea comprar? (0 para volver al menu): ");
             int cantidad = leerEntero(scanner);
 
             if (cantidad <= 0) {

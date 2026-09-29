@@ -102,7 +102,7 @@ public class Funcion {
         System.out.println("     1  2  3  4  5  6  7  8  9 10 11 12");
 
         if (sillasPreferencial != null) {
-            char[] prefFilas = { 'H','G' };
+            char[] prefFilas = { 'G','H' };
             for (int i = 1; i >= 0; i--) {
                 System.out.print(prefFilas[i] + "    ");
                 for (int j = 0; j < 9; j++) {
