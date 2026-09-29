@@ -12,7 +12,7 @@ public class Funcion {
         numeroSala = pNumeroSala;
         franjaHoraria = pFranjaHoraria;
 
-        sillasGeneral = new boolean[5][12];
+        sillasGeneral = new boolean[6][12];
 
         if (numeroSala == 1 || numeroSala == 2) {
             sillasPreferencial = new boolean[2][9];
@@ -59,13 +59,13 @@ public class Funcion {
         fila = Character.toUpperCase(fila);
         int col = numero - 1;
 
-        if (fila >= 'A' && fila <= 'E') {
+        if (fila >= 'A' && fila <= 'F') {
             int f = fila - 'A';
-            if (f >= 0 && f < 5 && col >= 0 && col < 12) {
+            if (f >= 0 && f < 6 && col >= 0 && col < 12) {
                 return sillasGeneral[f][col];
             }
-        } else if ((fila == 'F' || fila == 'F') && sillasPreferencial != null) {
-            int f = fila - 'F';
+        } else if ((fila == 'G' || fila == 'H') && sillasPreferencial != null) {
+            int f = fila - 'G';
             if (f >= 0 && f < 2 && col >= 0 && col < 9) {
                 return sillasPreferencial[f][col];
             }
@@ -77,7 +77,7 @@ public class Funcion {
         fila = Character.toUpperCase(fila);
         int col = numero - 1;
 
-        if (fila >= 'A' && fila <= 'E') {
+        if (fila >= 'A' && fila <= 'F') {
             int f = fila - 'A';
             if (f >= 0 && f < 6 && col >= 0 && col < 12) {
                 if (!sillasGeneral[f][col]) {
@@ -85,8 +85,8 @@ public class Funcion {
                     return true;
                 }
             }
-        } else if ((fila == 'F' || fila == 'G') && sillasPreferencial != null) {
-            int f = fila - 'F';
+        } else if ((fila == 'G' || fila == 'H') && sillasPreferencial != null) {
+            int f = fila - 'G';
             if (f >= 0 && f < 2 && col >= 0 && col < 9) {
                 if (!sillasPreferencial[f][col]) {
                     sillasPreferencial[f][col] = true;
@@ -102,7 +102,7 @@ public class Funcion {
         System.out.println("     1  2  3  4  5  6  7  8  9 10 11 12");
 
         if (sillasPreferencial != null) {
-            char[] prefFilas = { 'G','F' };
+            char[] prefFilas = { 'H','G' };
             for (int i = 1; i >= 0; i--) {
                 System.out.print(prefFilas[i] + "    ");
                 for (int j = 0; j < 9; j++) {
@@ -113,11 +113,11 @@ public class Funcion {
             System.out.println("----------------------------------------");
         }
 
-        char[] genFilas = {'E', 'D', 'C', 'B', 'A'};
-        for (int i = 0; i < 5; i++) {
+        char[] genFilas = {'F', 'E', 'D', 'C', 'B', 'A'};
+        for (int i = 0; i < 6; i++) {
             System.out.print(genFilas[i] + "   ");
             for (int j = 0; j < 12; j++) {
-                System.out.print(sillasGeneral[4 - i][j] ? " X " : " _ ");
+                System.out.print(sillasGeneral[5 - i][j] ? " X " : " _ ");
             }
             System.out.println();
         }
