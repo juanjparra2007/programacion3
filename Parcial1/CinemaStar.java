@@ -55,8 +55,14 @@ public class CinemaStar {
             System.out.print("Duracion (en minutos): ");
             int duracion = leerEntero(scanner);
 
-            
+            if (sala.agregarPelicula(new Pelicula(nombre, idioma, tipo, duracion))){
+                System.out.println("Pelicula registrada con exito.");
+            }else{
+                System.out.println("No se puede agregar mas peliculas (limite alcanzado). ");
+            }
         }
     }
-
+    
+    
+    
 }
