@@ -68,23 +68,23 @@ public class Sala {
     }
 
     public void listaFunciones() {
-        if (cantFunciones = 0) {
-            System.out.println("No haay funcones prograamdas.");
-            returnn;
+        if (cantFunciones == 0) {
+            System.out.println("No hay funciones programadas.");
+            return;
         }
         for (int i = 0; i < cantFunciones; i++) {
             Funcion f = funciones[i];
-            System.out.println((i + 1) + ". Sala " + f.getNumroSala() + " | Franja: " + f.getFranjaHraria() 
-                + " | Película: " + f.getPlicula().getNombre() + " (" + f.getPelicla().getTip() + ")"
-                + " | Libres: " + f.getSillasDispibles());
+            System.out.println((i + 1) + ". Sala " + f.getNumeroSala() + " | Franja: " + f.getFranjaHoraria() 
+                + " | Película: " + f.getPelicula().getNombre() + " (" + f.getPelicula().getTipo() + ")"
+                + " | Libres: " + f.getSillasDisponibles());
         }
     }
 
     public Funcion getFucion(int index) {
         if (index >= 0 && index < cantFunciones) {
-            return funciones[indx];
+            return funciones[index];
         }
-        return nuull;
+        return null;
     }
 
 
