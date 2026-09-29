@@ -32,6 +32,43 @@ public class Sala {
         }
     }
 
+    public Pelicula getPelicula(int index) {
+        if(index>=0 && index < cantPeliculas) {
+            return peliculas[index];
+        }
+        return null;
+    }
+
+    public boolean asignarFuncion(Pelicula p, int sala, int opcionFranja) {
+        if(sala < 1 || sala > 3 || opcionFranja < 1 || opcionFranja > 3) {
+            return false;
+        }
+
+        String franja = FRANJAS[opcionFranja - 1];
+
+        if ((sala == 1 || sala == 2) && p.getTipo().equalsIgnoreCase("3D")) {
+            System.out.println(">> Error: Las Salas 1 y 2 no proyectan películas en 3D.");
+            return false;
+        }
+
+        if (sala == 3 && !p.getTipo().equalsIgnoreCase("3D")) {
+            System.out.println(">> Error: La Sala 3 SOLO proyecta películas en 3D.");
+            return false;
+        }
+
+        for (int i = 0; i < cantFunciones; i++) {
+            if (funciones[i].getNumeroSala() == sala && funciones[i].getFranjaHoraria().equals(franja)) {
+                System.out.println(">> Error: Ya existe una función asignada en esta sala y franja horaria.");
+                return false;
+            }
+        }
+
+        funciones[cantFunciones++] = new Funcion(p, sala, franja);
+        return true;
+    }
+
+
+
 
 
 
