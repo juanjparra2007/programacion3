@@ -96,10 +96,11 @@ public class CinemaStar {
     private static void menuVentas(Scanner scanner, Sala sala){
         System.out.println("\n--- APARTADO DE VENTAS ---");
         sala.listaFunciones();
+        
         System.out.print("Sseleccione el numero de la funcion");
         int idx = leerEntero(scanner) - 1;
+        
         Funcion f = sala.getFuncion(idx);
-
         if(f == null) {
             System.out.println(" Funcion no valida. ");
             return; 
@@ -107,15 +108,76 @@ public class CinemaStar {
         
         boolean ventaActiva = true;
         while (ventaActiva){
-            f.mostrarEsquemaSillas();
+            f.DibujoDeSala();
             System.out.println("Sillas disponibles en esta funcion: " + f.getSillasDisponibles());
             System.out.println("Cuantas sillas desea comprar? (0 para volver al menu): ");
             int cantidad = leerEntero(scanner);
 
-            if ()
+            if (cantidad <= 0) {
+                break;
+            }
+
+            int totalPagar = 0;
+            int compradasExito = 0;
+
+            for (int i = 0; i < cantidad; i++){
+                System.out.print("Ingrese la coordenada de la silla " + (i + 1) + "(ej. A3, B4): ");
+                String cod = scanner.nextLine().trim().toUpperCase();
+
+                if(cod.length() < 2){
+                    System.out.println("Formato invalido. ");
+                    i--;
+                    continue;
+                }
+
+                char fila = cod.charAt(0);
+                int num;
+                try{
+                    num = Integer.parseInt(cod.substring(1));
+                }catch(NumberFormatException e){
+                    System.out.println("Numero de silla no valido. ");
+                    i--;
+                    continue;
+                }
+                
+                if (f.sillaOcupada(fila, num)) {
+                    System.out.println(">> La silla " + cod + " ya está ocupada o no existe. Elija otra.");
+                    i--;
+                } else {
+                    if (f.ocupaSilla(fila, num)) {
+                        int precio = sala.calcularPrecioSilla(f.getNumeroSala(), fila);
+                        totalPagar += precio;
+                        compradasExito++;
+                        System.out.println("-> Silla " + cod + " reservada ($" + precio + " COP)");
+                    } else {
+                        System.out.println(">> La silla " + cod + " no existe en esta sala.");
+                        i--;
+                    }
+                }
+            }
+
+            if (compradasExito > 0){
+                System.out.println("\n=================================");
+                System.out.println("COMPRA REALIZADA CON ÉXITO");
+                System.out.println("BOLETAS COMPRADAS: " + compradasExito);
+                System.out.println("TOTAL A PAGAR: " + totalPagar + " COP");
+                System.out.println("=================================");
+            }
+
+            System.out.print("\n¿Desea hacer otra compra en esta misma función? (S/N): ");
+            if (!scanner.nextLine().equalsIgnoreCase("S")) {
+                ventaActiva = false;
+            }
         }
-
-
+    }
+    
+    private static int leerEntero(Scanner sc) {
+        try {
+            int num = Integer.parseInt(sc.nextLine());
+            return num;
+        } catch (Exception e) {
+            return -1;
+        }
     }
 
 
