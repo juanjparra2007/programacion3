@@ -80,7 +80,7 @@ public class Sala {
         }
     }
 
-    public Funcion getFucion(int index) {
+    public Funcion getFuncion(int index) {
         if (index >= 0 && index < cantFunciones) {
             return funciones[index];
         }
