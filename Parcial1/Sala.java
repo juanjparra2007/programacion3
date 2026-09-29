@@ -87,28 +87,17 @@ public class Sala {
         return null;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public int calcularPrecioSilla(int sala, char fila) {
+        fila = Character.toUpperCase(fila);
+        if (sala == 3) {
+            return 10000;
+        } else {
+            if(fila =='G' || fila == 'H'){
+                return 12000;
+            } else {
+                return 8000;
+            }
+        }
+    }
 
 }
