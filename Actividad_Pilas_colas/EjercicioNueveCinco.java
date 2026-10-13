@@ -60,7 +60,7 @@ public class EjercicioNueveCinco {
                         }
                     }
                 } else {
-                    System.out.println("Valor de k no válido (solo se permite -1 o 0)");
+                    System.out.println("Valor de k no válido.");
                 }
             }
 
